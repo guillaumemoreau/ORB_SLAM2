@@ -38,12 +38,15 @@ endif()
 
 find_package(Eigen3 3.1.0 REQUIRED)
 find_package(Pangolin REQUIRED)
+find_package(g2o REQUIRED) 
 
 include_directories(
 ${PROJECT_SOURCE_DIR}
 ${PROJECT_SOURCE_DIR}/include
 ${EIGEN3_INCLUDE_DIR}
 ${Pangolin_INCLUDE_DIRS}
+${G2O_INCLUDE_DIR}
+/usr/local/include
 )
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
@@ -75,8 +78,38 @@ ${OpenCV_LIBS}
 ${EIGEN3_LIBS}
 ${Pangolin_LIBRARIES}
 ${PROJECT_SOURCE_DIR}/Thirdparty/DBoW2/lib/libDBoW2.so
-${PROJECT_SOURCE_DIR}/Thirdparty/g2o/lib/libg2o.so
+-lg2o_cli
+-lg2o_core
+-lg2o_csparse_extension
+-lg2o_ext_freeglut_minimal
+-lg2o_hierarchical
+-lg2o_incremental
+-lg2o_interactive
+-lg2o_interface
+-lg2o_opengl_helper
+-lg2o_parser
+-lg2o_simulator
+-lg2o_solver_cholmod
+-lg2o_solver_csparse
+-lg2o_solver_dense
+-lg2o_solver_eigen
+-lg2o_solver_pcg
+-lg2o_solver_slam2d_linear
+-lg2o_solver_structure_only
+-lg2o_stuff
+-lg2o_types_data
+-lg2o_types_icp
+-lg2o_types_sba
+-lg2o_types_sclam2d
+-lg2o_types_sim3
+-lg2o_types_slam2d_addons
+-lg2o_types_slam2d
+-lg2o_types_slam3d_addons
+-lg2o_types_slam3d
+-lg2o_viewer
 )
+
+
 
 # Build examples
 
